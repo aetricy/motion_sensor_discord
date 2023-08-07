@@ -1,0 +1,5 @@
+server/secrets.py
+client/nodemcu/secrets.h
+
+server/__pycache__
+old.py
