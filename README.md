@@ -40,7 +40,7 @@ To connect the motion sensor to NodeMCU, make the following connections:
 - beautifulsoup4 = 4.12.2
 - requests = 2.22.0
 
-To install python packages
+To install python packages and start discord bot service.
 
 
 ```bash
