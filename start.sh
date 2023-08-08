@@ -1,6 +1,6 @@
 #!/bin/sh
-TEST=`pwd`'/server/discord_bot.py'
-echo $TEST
+path=`pwd`'/server/discord_bot.py'
+echo $path
 
 sudo apt upgrade
 sudo apt install
@@ -10,4 +10,4 @@ pip install beautifulsoup4
 
 echo Discord Bot Starting............
 
-python3 $TEST
+python3 $path
