@@ -97,9 +97,10 @@ class MyClient(discord.Client):
                 self.isAccesible=False
         
 
-
-
 intents = discord.Intents.default()
 intents.message_content = True 
 client = MyClient(intents=intents)
+
+# Discord Token
 client.run(secrets.TOKEN_KEY)
+
