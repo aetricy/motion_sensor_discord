@@ -26,6 +26,7 @@ To connect the motion sensor to NodeMCU, make the following connections:
 - Sensor GND pin -> NodeMCU GND pin.
 - Sensor TRIG pin -> NodeMCU D1 (GPIO 5) pin.
 - Sensor ECHO pin -> NodeMCU D2 (GPIO 4) pin.
+- Led Alarm Pin -> NodeMCU D3 (GPIO 0) pin.
 
 
 ## Setup
