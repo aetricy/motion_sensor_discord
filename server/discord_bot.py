@@ -7,15 +7,28 @@ class MyClient(discord.Client):
 
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
-        channel = client.get_channel(1136435376718884864)
+
+        # Get Channel ID
+        text_channel_list = []
+        text_channel_id = []
+        for server in self.guilds:
+            for channel in server.channels:
+                if str(channel.type)=='text':
+                    text_channel_id.append(channel.id)
+
+        
+        self.channel = client.get_channel((text_channel_id[0]))  
         embed = discord.Embed(title="Discord Bot Activated.",colour=0xe9b96e)
-        await channel.send(embed=embed)
+        await self.channel.send(embed=embed)
+
+
         self.myLoop.start()
         self.tempAlarm=0
         self.isAccesible=True
         self.stats=[]
 
     async def on_message(self,message):
+        
         print(f'Message from {message.author}: {message.content}')
 
         if message.author == self.user:
@@ -63,7 +76,7 @@ class MyClient(discord.Client):
 
     @tasks.loop(seconds=5.0)
     async def myLoop(self):
-        channel = client.get_channel(1136435376718884864)
+
         if request_file.status()!=502:
             
             self.stats=request_file.status()
@@ -73,15 +86,15 @@ class MyClient(discord.Client):
             if (alarm!=self.tempAlarm and alarm!=0):
                 print("Alarm!")
                 embed=discord.Embed(title="Detect Movement in the Bedroom!", description="DANGER!! DANGER!! DANGER!!", color=0xcc0000)
-                await channel.send(embed=embed)
+                await self.channel.send(embed=embed)
             self.tempAlarm=alarm
             if self.isAccesible==False:
-                await channel.send("Connected to the Sensor")         
+                await self.channel.send("Connected to the Sensor")         
             self.isAccesible=True   
         else:
             if self.isAccesible==True:
                 print('Cannot communicate with sensor!')
-                await channel.send("Can't Communicate with Sensor")
+                await self.channel.send("Can't Communicate with Sensor")
                 self.isAccesible=False
         
 
