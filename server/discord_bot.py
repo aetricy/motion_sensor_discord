@@ -9,7 +9,6 @@ class MyClient(discord.Client):
         print(f'Logged on as {self.user}!')
 
         # Get Channel ID
-        text_channel_list = []
         text_channel_id = []
         for server in self.guilds:
             for channel in server.channels:
