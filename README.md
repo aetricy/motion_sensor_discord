@@ -64,3 +64,5 @@ To install python packages and start discord bot service.
 
 [Nodemcu ESP8266 Documentation](https://tttapa.github.io/ESP8266/Chap10%20-%20Simple%20Web%20Server.html)
 
+[HC-SR04 Ultrasonic Documentation](https://www.handsontec.com/dataspecs/HC-SR04-Ultrasonic.pdf)
+
