@@ -33,17 +33,17 @@ class MyClient(discord.Client):
         if message.author == self.user:
             return
         
-        if message.content =='ping':
+        if message.content =='!ping':
             await message.channel.send('pong')
 
-        elif message.content.startswith('reset'):
+        elif message.content.startswith('!reset'):
             if request_file.make_request("http://192.168.1.254:255/reset")==200:
                 embed = discord.Embed(title="Alarm Resetted.",colour=0xedd400)
                 await message.channel.send(embed=embed)
             else:
                 await message.channel.send("Can't connect to the Sensor.")
 
-        elif message.content.startswith('toggle'):
+        elif message.content.startswith('!toggle'):
             if request_file.make_request("http://192.168.1.254:255/toggle")==200:
                 if self.stats[2]==0:
                     embed=discord.Embed(title="Sensor Activated.", color=0x73d216)
@@ -54,7 +54,7 @@ class MyClient(discord.Client):
             else:
                 await message.channel.send("Can't connect to the Sensor.")
             
-        elif message.content.startswith('status'):
+        elif message.content.startswith('!status'):
 
             if request_file.status()!=502:
                 embed = discord.Embed(title="Status",colour=0x00b0f4)
