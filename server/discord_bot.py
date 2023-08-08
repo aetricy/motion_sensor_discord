@@ -88,7 +88,10 @@ class MyClient(discord.Client):
                 await self.channel.send(embed=embed)
             self.tempAlarm=alarm
             if self.isAccesible==False:
-                await self.channel.send("Connected to the Sensor")         
+                await self.channel.send("Connected to the Sensor")     
+                if(self.stats[2]==0):
+                    if request_file.make_request("http://192.168.1.254:255/toggle")==200:
+                        pass
             self.isAccesible=True   
         else:
             if self.isAccesible==True:
