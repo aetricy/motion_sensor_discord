@@ -33,7 +33,7 @@ To connect the motion sensor to NodeMCU, make the following connections:
 1. Program the NodeMCU using a suitable Arduino IDE or NodeMCU programming software. You can use `client/nodemcu/nodemcu.ino` to upload the code.
 2. Replace "WIFI_SSID" with your Wi-Fi network name (SSID) and "WIFI_PASSWORD" with your Wi-Fi password in `client/nodemcu/nodemcu.ino`.
 3. Create a Discord bot and obtain its token in [Discord Portal](https://discord.com/developers/docs/intro). Add the token by filling in the appropriate field in `server/discord_bot.py`.
-4. Install the required Python packages by running the following command in the project directory:
+4. Install the required Python packages by running ./start.sh:
 - python = 3.8.10
 - discord.py = 2.3.1
 - beautifulsoup4 = 4.12.2
